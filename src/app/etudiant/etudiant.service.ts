@@ -10,10 +10,6 @@ export class EtudiantService {
   constructor(private http:HttpClient) { }
 
   getAllEtudiants():any{
-     this.http.get(this.backEndURL).subscribe(data=>{
-      this.etudiants=data
-      return this.etudiants
-    })
-
+     return this.http.get(this.backEndURL)
   }
 }
