@@ -12,6 +12,9 @@ export class ListComponent {
   etudiants:any;
 constructor(private etudiantService:EtudiantService){}
 ngOnInit() {
-this.etudiants=this.etudiantService.getAllEtudiants()
+this.etudiants=this.etudiantService.getAllEtudiants().subscribe((data:any)=>{
+  this.etudiants=data
+})
+
 }
 }
