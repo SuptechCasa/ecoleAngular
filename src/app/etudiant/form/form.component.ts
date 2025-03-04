@@ -20,6 +20,7 @@ formData=this.fb.group({
 constructor(private fb:FormBuilder, private etudiantService:EtudiantService,public activeModal:NgbActiveModal){}
 actionEtudiant(){
 this.etudiantService.addEtudiant(this.formData.value)
+
 this.activeModal.close()
 }
 }

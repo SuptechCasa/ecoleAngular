@@ -10,9 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-  etudiants:any;
+  etudiants=this.etudiantService.etudiants
 constructor(private etudiantService:EtudiantService){}
 ngOnInit() {
-this.etudiants=this.etudiantService.getAllEtudiants()
+this.etudiantService.getAllEtudiants()
 }
 }
