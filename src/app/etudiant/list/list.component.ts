@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { EtudiantService } from '../etudiant.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })

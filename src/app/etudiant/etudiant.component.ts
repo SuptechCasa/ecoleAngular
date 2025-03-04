@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ListComponent } from "./list/list.component";
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormComponent } from './form/form.component';
 
 @Component({
   selector: 'app-etudiant',
@@ -9,5 +11,8 @@ import { ListComponent } from "./list/list.component";
   styleUrl: './etudiant.component.css'
 })
 export class EtudiantComponent {
-
+  constructor(private modal:NgbModal){}
+  openModal(){
+    this.modal.open(FormComponent,{size:"sm"})
+  }
 }

@@ -1,0 +1,14 @@
+form{
+  margin: 20px;
+  width: 250px;
+  align-content: center;
+}
+input{
+  margin-bottom: 5px;
+}
+#form{
+  text-align: center;
+}
+button{
+float: right;
+}

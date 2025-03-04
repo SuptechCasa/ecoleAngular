@@ -12,4 +12,9 @@ export class EtudiantService {
   getAllEtudiants():any{
     return this.http.get(this.backEndURL)
   }
+  addEtudiant(etudiant:any){
+    this.http.post(this.backEndURL,etudiant).subscribe(data=>{
+
+    })
+  }
 }

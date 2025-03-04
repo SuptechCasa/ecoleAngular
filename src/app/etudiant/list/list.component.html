@@ -8,13 +8,10 @@
     </tr>
   </thead>
   <tbody>
-    @for (etudiant of etudiants; track etudiant.id) {
-    <tr>
+    <tr *ngFor="let etudiant of etudiants|async">
       <td scope="row">{{etudiant.id}}</td>
       <td>{{etudiant.nom}}</td>
       <td>{{etudiant.age}}</td>
     </tr>
-    }
-
   </tbody>
 </table>
