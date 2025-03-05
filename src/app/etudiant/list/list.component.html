@@ -7,14 +7,12 @@
       <th scope="col"></th>
     </tr>
   </thead>
-  <tbody>
-    @for (etudiant of etudiants(); track etudiant.id) {
-    <tr>
+  <tbody >
+    <tr *ngFor="let etudiant of etudiants|async">
           <td scope="row">{{etudiant.id}}</td>
           <td>{{etudiant.nom}}</td>
           <td>{{etudiant.age}}</td>
         </tr>
-    }
 
   </tbody>
 </table>

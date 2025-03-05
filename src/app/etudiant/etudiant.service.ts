@@ -6,18 +6,11 @@ import { Injectable,signal } from '@angular/core';
 })
 export class EtudiantService {
   backEndURL="http://localhost:8080/etudiants"
-  etudiants=signal<any[]>([])
+  etudiants:any
   constructor(private http:HttpClient) { }
 
-  getAllEtudiants():void{
-    this.http.get<any[]>(this.backEndURL).subscribe(data=>{
-      this.etudiants.set(data)
-    })
+  getAllEtudiants(){
+    return this.http.get<any[]>(this.backEndURL)
   }
-  addEtudiant(etudiant:any){
-    this.http.post(this.backEndURL,etudiant).subscribe(data=>{
-      this.etudiants.update(state=>[...state,data])
 
-    })
-  }
 }
