@@ -12,4 +12,8 @@ import { FormComponent } from './form/form.component';
 })
 export class EtudiantComponent {
 
+  constructor(private modal:NgbModal){}
+  openModal(){
+    this.modal.open(FormComponent,{size:"sm"})
+  }
 }

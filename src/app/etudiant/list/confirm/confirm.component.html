@@ -1,0 +1,16 @@
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Supprimer étudiant</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Voulez vous vraiment supprimer {{nomEtudiant}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="activeModal.close('oui')">Oui</button>
+        <button type="button" class="btn btn-secondary" (click)="activeModal.close('non')">Non</button>
+      </div>
+    </div>

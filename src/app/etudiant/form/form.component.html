@@ -1,18 +1,18 @@
 <div id="form">
-  <h4>Ajouter un étudiant</h4>
-<form >
+  <h4>{{action}} un étudiant</h4>
+<form [formGroup]="formData">
   <div class="col">
     <div class="col">
-      <input type="text" class="form-control" placeholder="Id">
+      <input formControlName="id" type="text" class="form-control" placeholder="Id">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Nom">
+      <input formControlName="nom" type="text" class="form-control" placeholder="Nom">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Age">
+      <input formControlName="age" type="text" class="form-control" placeholder="Age">
     </div>
     <div class="col">
-      <button type="submit" class="btn btn-primary" >Valider</button>
+      <button type="submit" class="btn btn-primary" (click)="actionEtudiant()">{{action}}</button>
     </div>
   </div>
 </form>

@@ -4,15 +4,22 @@
       <th scope="col">Id</th>
       <th scope="col">Nom</th>
       <th scope="col">Age</th>
+      <th scope="col">Photo</th>
       <th scope="col"></th>
     </tr>
   </thead>
   <tbody >
-    <tr *ngFor="let etudiant of etudiants|async">
+    @for (etudiant of etudiants(); track etudiant.id) {
+    <tr>
           <td scope="row">{{etudiant.id}}</td>
           <td>{{etudiant.nom}}</td>
           <td>{{etudiant.age}}</td>
+          <td><img class="photo" src="{{etudiant.photo}}"></td>
+          <td>
+            <img src="assets/icons/delete.ico" (click)="openConfirm(etudiant)">
+            <img src="assets/icons/update.png" (click)="openUpdateModal(etudiant)">
+          </td>
         </tr>
-
+      }
   </tbody>
 </table>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { EtudiantService } from '../etudiant.service';
 import { CommonModule } from '@angular/common';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmComponent } from './confirm/confirm.component';
+import { FormComponent } from '../form/form.component';
 
 @Component({
   selector: 'app-list',
@@ -10,9 +13,25 @@ import { CommonModule } from '@angular/common';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-  etudiants:any
-constructor(private etudiantService:EtudiantService){}
+  etudiants=this.etudiantService.etudiants
+constructor(private etudiantService:EtudiantService,private modal:NgbModal){}
 ngOnInit() {
-this.etudiants=this.etudiantService.getAllEtudiants()
+this.etudiantService.getAllEtudiants()
+}
+
+openConfirm(etudiant:any){
+const refModal=this.modal.open(ConfirmComponent)
+refModal.componentInstance.nomEtudiant=etudiant.nom
+refModal.result.then(reponse=>{
+ if (reponse === 'oui'){
+  this.etudiantService.deleteEtudiant(etudiant.id)
+ }
+})
+}
+
+openUpdateModal(etudiant:any){
+  const refModal=this.modal.open(FormComponent,{size:"sm"})
+  refModal.componentInstance.etudiant=etudiant
+  refModal.componentInstance.action="Modifier"
 }
 }
