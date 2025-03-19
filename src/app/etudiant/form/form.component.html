@@ -1,6 +1,6 @@
 <div id="form">
   <h4>{{action}} un étudiant</h4>
-<form [formGroup]="formData">
+<form [formGroup]="etudiantData">
   <div class="col">
     <div class="col">
       <input formControlName="id" type="text" class="form-control" placeholder="Id">
@@ -10,6 +10,9 @@
     </div>
     <div class="col">
       <input formControlName="age" type="text" class="form-control" placeholder="Age">
+    </div>
+    <div class="col">
+    <input type="file" (change)="selectFile($event)" class="form-control">
     </div>
     <div class="col">
       <button type="submit" class="btn btn-primary" (click)="actionEtudiant()">{{action}}</button>
