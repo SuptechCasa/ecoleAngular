@@ -29,9 +29,13 @@ refModal.result.then(reponse=>{
 })
 }
 
-openUpdateModal(etudiant:any){
+openUpdateModal(etudiant:any,event:Event){
   const refModal=this.modal.open(FormComponent,{size:"sm"})
   refModal.componentInstance.etudiant=etudiant
   refModal.componentInstance.action="Modifier"
+  const updateImg=event.target as HTMLImageElement
+  const img=updateImg.parentElement?.parentElement?.children[3]
+  updateImg.src=updateImg.src
+
 }
 }

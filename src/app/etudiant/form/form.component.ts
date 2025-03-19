@@ -22,7 +22,6 @@ action="Ajouter"
 constructor(private activeModal:NgbActiveModal,private fb:FormBuilder,private etudiantService:EtudiantService){}
 
 actionEtudiant(){
-  if (this.action==="Ajouter"){
   const id=this.etudiantData.get('id')?.value
   const nom=this.etudiantData.get('nom')?.value
   const age=this.etudiantData.get('age')?.value
@@ -32,9 +31,10 @@ actionEtudiant(){
   if (age) formData.append('age',age)
   formData.append('photo',this.selectedFile)
 
+  if (this.action==="Ajouter"){
   this.etudiantService.addEtudiant(formData)
   }else{
-    this.etudiantService.updateEtudiant(this.etudiantData.value)
+    this.etudiantService.updateEtudiant(formData)
   }
   this.activeModal.close()
 }

@@ -32,6 +32,7 @@ export class EtudiantService {
   updateEtudiant(etudiant:any){
     this.http.put(this.backEndURL,etudiant).subscribe(updatedEtudiant=>{
       this.etudiants.update(students=>students.map(student=>(student.id===etudiant.id)?updatedEtudiant:student))
+
     })
 }
 }
